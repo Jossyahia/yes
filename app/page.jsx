@@ -14,7 +14,6 @@ export default async function Home() {
   try {
     const res = await fetch(
       `https://victorious-teal-school-uniform.cyclic.app/api`,
-      { next: { revalidate: 10000 } }
     );
     const data = await res.json();
     const results = data;
