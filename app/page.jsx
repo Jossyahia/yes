@@ -12,10 +12,9 @@ export const metadata = {
 export default async function Home() {
   //const likes = searchParams.likes || "fetchTrending";
   try {
-    const res = await fetch(
-      `https://victorious-teal-school-uniform.cyclic.app/api`,
-      { next: { revalidate: 60 } }
-    );
+    const res = await fetch(process.env.API_HOST, {
+      next: { revalidate: 60 },
+    });
     const data = await res.json();
     const results = data;
     return (
