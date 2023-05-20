@@ -1,6 +1,7 @@
 import MenuItem from "./MenuItem";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { AiOutlineRise } from "react-icons/ai";
 import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 
@@ -10,6 +11,7 @@ export default function Header() {
       <div className="flex">
         <MenuItem title="HOME" address="/" Icon={AiFillHome} />
         <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoCircleFill} />
+        <MenuItem title="TRENDING" address="/trending" Icon={AiOutlineRise} />
       </div>
       <div className="flex items-center space-x-5">
         <DarkModeSwitch />
