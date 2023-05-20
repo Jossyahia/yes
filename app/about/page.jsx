@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const metadata = {
   title: "About Fastfast Delivery Service",
 };
@@ -38,14 +39,14 @@ export default function About() {
         promises, and we are always looking for new ways to improve our
         services.
       </p>
-      <a
+      <Link
         href="/"
         className="px-5 py-4"
         target="_self"
         rel="noopener noreferrer"
       >
         <h2 className="text-2xl font-medium text-amber-600">Go back</h2>
-      </a>
+      </Link>
     </div>
   );
 }
