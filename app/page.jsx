@@ -2,7 +2,7 @@
 
 // for more info "https://github.com/vercel/next.js/issues/43077"
 
-//export const dynamic = "force-dynamic"; // this is the fix
+export const dynamic = "force-dynamic"; // this is the fix
 
 import Results from "@/components/Results";
 
@@ -11,7 +11,7 @@ export default async function Home({ searchParams }) {
 
   const res = await fetch(
     `https://victorious-teal-school-uniform.cyclic.app/api`,
-    { next: { revalidate: 60 } }
+  
   );
 
   if (!res.ok) {
