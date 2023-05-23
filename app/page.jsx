@@ -3,7 +3,7 @@
 import Results from "./../components/Results";
 export const fetchCache = "auto";
 
-//export const dynamic = "force-dynamic"; // this is the fix
+export const dynamic = "force-dynamic"; // this is the fix
 
 export const metadata = {
   title: "Welcome to Fastfast Delivery Service",
@@ -12,7 +12,10 @@ export const metadata = {
 export default async function Home() {
   //const likes = searchParams.likes || "fetchTrending";
   try {
-    const res = await fetch(process.env.API_HOST, { cache: "no-store" });
+    const res = await fetch(
+      `https://victorious-teal-school-uniform.cyclic.app/api`,
+      { cache: "no-store" }
+    );
     const data = await res.json();
     const results = data;
     return (
