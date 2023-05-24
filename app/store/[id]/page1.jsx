@@ -1,16 +1,18 @@
-//"use static"
+//export const dynamic = "force-dynamic"; // this is the fix
+"use client"
 import Image from "next/image";
-
-async function getMovie(_id) {
+async function getStore(params) {
   const res = await fetch(
-    `https://victorious-teal-school-uniform.cyclic.app/api/${_id}`
+    `https://victorious-teal-school-uniform.cyclic.app/api/${params}`
   );
   return await res.json();
+  console.log("this is res", res);
 }
 
-export default async function MoviePage({ params }) {
-  const _id = params.id;
-  const result = await getMovie(_id);
+export default async function StorePage({ params }) {
+  const storeId = params.id;
+  const result = await getStore(storeId);
+  console.log("this is result", result);
   let shortTime = result.createdAt?.substring(0, 10);
 
   return (
