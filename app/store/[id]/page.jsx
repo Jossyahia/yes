@@ -1,18 +1,13 @@
+export const dynamic = "force-dynamic"; // this is the fix
+
 import Image from "next/image";
-
-export const metadata = {
-  title: "FDS Store",
-  description: "Products details",
-};
-
-export async function getStore(storeId) {
+async function getStore(storeId) {
   const res = await fetch(
-    `https://victorious-teal-school-uniform.cyclic.app/api/${storeId}`,
-    { cache: "no-store" }
+    `https://victorious-teal-school-uniform.cyclic.app/api/${storeId}`
   );
-    if (!res.ok) {
-      throw new Error("Failed to fetch data"); // this will be caught by the error page and passed to the page as props
-    }
+  if (!res.ok) {
+    throw new Error("Failed to fetch data"); // this will be caught by the error page and passed to the page as props
+  }
   return await res.json();
 }
 
