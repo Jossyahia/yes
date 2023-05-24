@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"; // this is the fix
+
 import Results from "./../components/Results";
 export async function fetchdata() {
   const res = await fetch(
