@@ -5,17 +5,20 @@ export const metadata = {
   description: "Products details",
 };
 
-export async function getMovie(_id) {
+export async function getStore(storeId) {
   const res = await fetch(
-    `https://victorious-teal-school-uniform.cyclic.app/api/${_id}`,{cache: 'no-store'}
-  
+    `https://victorious-teal-school-uniform.cyclic.app/api/${storeId}`,
+    { cache: "no-store" }
   );
+    if (!res.ok) {
+      throw new Error("Failed to fetch data"); // this will be caught by the error page and passed to the page as props
+    }
   return await res.json();
 }
 
-export default async function MoviePage({ params }) {
-  const _id = params.id;
-  const result = await getMovie(_id);
+export default async function StorePage({ params }) {
+  const storeId = params.id;
+  const result = await getStore(storeId);
   let shortTime = result.createdAt?.substring(0, 10);
 
   return (
