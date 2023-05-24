@@ -1,19 +1,18 @@
-export const dynamic = "force-dynamic"; // this is the fix
-
+//export const dynamic = "force-dynamic"; // this is the fix
+"use client"
 import Image from "next/image";
-async function getStore(storeId) {
+async function getStore(params) {
   const res = await fetch(
-    `https://victorious-teal-school-uniform.cyclic.app/api/${storeId}`
+    `https://victorious-teal-school-uniform.cyclic.app/api/${params}`
   );
-  if (!res.ok) {
-    throw new Error("Failed to fetch data"); // this will be caught by the error page and passed to the page as props
-  }
   return await res.json();
+  console.log("this is res", res);
 }
 
 export default async function StorePage({ params }) {
   const storeId = params.id;
   const result = await getStore(storeId);
+  console.log("this is result", result);
   let shortTime = result.createdAt?.substring(0, 10);
 
   return (
