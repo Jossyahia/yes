@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "FDS Stor",
+export const metadata = {
+  title: "FDS Store",
   description: "Products details",
 };
+
 export async function getMovie(_id) {
   const res = await fetch(
     `https://victorious-teal-school-uniform.cyclic.app/api/${_id}`,{cache: 'no-store'}
