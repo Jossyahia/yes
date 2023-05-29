@@ -1,9 +1,12 @@
 //"use static"
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+
 
 async function getMovie(_id) {
   const res = await fetch(
-    `https://victorious-teal-school-uniform.cyclic.app/api/${_id}`
+    `https://victorious-teal-school-uniform.cyclic.app/api/${_id}`,
+    { next: { revalidate: 60 } }
   );
   return await res.json();
 }

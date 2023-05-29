@@ -1,0 +1,3 @@
+API_HOST = https://victorious-teal-school-uniform.cyclic.app/api
+
+ API_HOST_ID = https://victorious-teal-school-uniform.cyclic.app/api/${_id}
