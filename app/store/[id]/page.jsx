@@ -11,7 +11,7 @@ async function getMovie(_id) {
   return await res.json();
 }
 
-export default async function MoviePage({ params }) {
+export default async function MoviePage({ useSearchParams }) {
   const _id = params.id;
   const result = await getMovie(_id);
   let shortTime = result.createdAt?.substring(0, 10);
